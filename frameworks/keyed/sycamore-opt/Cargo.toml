@@ -1,0 +1,21 @@
+[package]
+authors = ["Luke Chu"]
+edition = "2021"
+name = "js-framework-benchmark-sycamore"
+version = "1.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+getrandom = { version = "*", features = ["js"] }
+rand = { version = "*", features = ["small_rng"] }
+sycamore = "*"
+wasm-bindgen = "*"
+web-sys = { version = "*", features = ["Window", "Document"] }
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = "fat"
+panic = "abort"

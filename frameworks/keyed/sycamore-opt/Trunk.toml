@@ -1,0 +1,8 @@
+[build]
+target = "index-trunk.html"
+filehash = false
+public_url = "./dist/"
+
+[[hooks]]
+stage = "post_build"
+command = "scripts/postprocess.sh"
